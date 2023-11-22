@@ -13,9 +13,10 @@ void intHandler3();
 
 void printf_gugu(){
 	for(int i=0;i<=20;i++){
-		for(int j=1;j<20;j++){
+		for(int j=1;j<=20;j++){
 			printf("%d X %d = %d\n",i,j, i*j);
 		}
+		sleep(1);
 		if(i==9)
 			signal(SIGINT,intHandler3);
 	}
@@ -40,7 +41,7 @@ void intHandler(){
 }
 
 void intHandler2(){
-	
+	printf("아직 구구단이 끝나지 않았습니다\n");
 }
 
 void intHandler3(){
