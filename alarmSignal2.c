@@ -9,7 +9,7 @@ void intHandler2();
 int main(){
 	signal(SIGALRM,intHandler);
 	signal(SIGINT,intHandler2);
-	alram(10);
+	alarm(10);
 	int correct = 0;
 	while(!correct){
 		if(getchar() == '1'){
@@ -21,15 +21,15 @@ int main(){
 		}
 
 	}
-	printf("End of main \n");
+	printf("Correct!\n");
 }
 
-void intHandler(){
+void intHandler(int signo){
 	printf("Fire!\n");
-	eixt(0);
+	exit(0);
 }
 
-void intHandler2(){
+void intHandler2(int signo){
 	printf("10sec reset...\n");
 	alarm(10);
 }
